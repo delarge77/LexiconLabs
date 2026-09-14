@@ -228,14 +228,12 @@
 # discount = calculate_discount(subtotal, discount_percent)
 # final_total = calculate_final_total(subtotal, discount)
 
-# print("Subtotal:", subtotal)
-# print("Discount:", discount)
-# print("Final total:", final_total)
+# def main():
+#     print("Subtotal:", subtotal)
+#     print("Discount:", discount)
+#     print("Final total:", final_total)
 
-
-
-
-
+# print(main())
 
 # Part F - Applied challenge: Event registration processor 
  
@@ -246,6 +244,118 @@
 # 5. Write a function that returns the oldest participant. 
 # 6. Write a function that creates a readable summary string for one participant. 
 # 7. Keep input/output responsibilities separate from calculation functions as much as possible.
+
+# Exercise 1 — Create the functions
+# def normalize_name(name):
+#     return name.strip().title()
+
+
+# def validate_age(age):
+#     return 18 <= age <= 100
+
+
+# def calculate_registration_fee(age, student):
+#     if student:
+#         return 50
+#     elif age < 30:
+#         return 80
+#     else:
+#         return 100
+
+
+# def create_participant(name, age, student):
+#     return {
+#         "name": normalize_name(name),
+#         "age": age,
+#         "student": student,
+#         "fee": calculate_registration_fee(age, student)
+#     }
+
+# # Exercise 2 — Create at least eight participants
+# participant1 = create_participant("Alessandro", 38, False)
+# participant2 = create_participant("Maria", 25, True)
+# participant3 = create_participant("Alicia", 29, False)
+# participant4 = create_participant("Matteo", 22, True)
+# participant5 = create_participant("Apple", 31, False)
+# participant6 = create_participant("Schummi", 45, False)
+# participant7 = create_participant("Cristina", 21, True)
+# participant8 = create_participant("Jefferson", 52, False)
+
+# participants = [
+#     participant1,
+#     participant2,
+#     participant3,
+#     participant4,
+#     participant5,
+#     participant6,
+#     participant7,
+#     participant8
+# ]
+
+# # Exercise 3 — Calculate total registration revenue
+# def calculate_total_revenue(participants):
+#     total = 0
+
+#     for participant in participants:
+#         total += participant["fee"]
+
+#     return total
+
+# # Exercise 4 — Return only student participants
+# def get_student_participants(participants):
+#     students = []
+
+#     for participant in participants:
+#         if participant["student"]:
+#             students.append(participant)
+
+#     return students
+
+# # Exercise 5 — Return the oldest participant
+# def get_oldest_participant(participants):
+#     oldest = participants[0]
+
+#     for participant in participants:
+#         if participant["age"] > oldest["age"]:
+#             oldest = participant
+
+#     return oldest
+
+# # Exercise 6 — Create a readable summary
+# def format_participant(participant):
+#     if participant["student"]:
+#         status = "Student"
+#     else:
+#         status = "Non-student"
+
+#     return f"Name: {participant['name']}, Age: {participant['age']}, Status: {status}, Fee: {participant['fee']}"
+
+# # Exercise 7 — Main section / Input and Output
+# print("Participants:")
+
+# for participant in participants:
+#     print(format_participant(participant))
+
+# print()
+
+# print("Total revenue:", calculate_total_revenue(participants))
+
+# print()
+
+# print("Student participants:")
+
+# for student in get_student_participants(participants):
+#     print(format_participant(student))
+
+# print()
+
+# print("Oldest participant:")
+
+# print(format_participant(get_oldest_participant(participants)))
+
+
+
+
 
 
 
