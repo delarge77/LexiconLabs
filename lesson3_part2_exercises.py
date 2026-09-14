@@ -137,34 +137,18 @@ flights_info = [
 # print(len(flightMax))
 
 # 5 Search for a flight
-# improvements search is not found
-# flight_number = int(input("Enter flight number: "))
-# flightFound = {}
-# for flight in flights_info:
-#     if flight["number"] == flight_number:
-#         flightFound = flight
-#         break
+flight_number = int(input("Enter flight number: "))
+flightFound = {}
+for flight in flights_info:
+    if flight["number"] == flight_number:
+        flightFound = flight
+        break
+    else:
+        flightFound = {}
 
-# flight = flightFound["destination"][:2].upper()+str(flightFound["number"])
-# print(f"Flight was found: {flight}")
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
+if len(flightFound) > 0:
+    flight = flightFound["destination"][:2].upper()+str(flightFound["number"])
+    print(f"Flight was found: {flight}")
+else:
+    print("Flight not find")
 
