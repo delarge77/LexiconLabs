@@ -82,4 +82,20 @@
 # greeting_new_customer = greet
 # print(f"Greeting new customer {greeting_new_customer()}")
 
+# def greet(name:str, greeting="Hello") -> str:
+    # greeting = "Good morning"
+    # return f"{greeting} {name}"
+
+# print(greet("Alessandro"))
+
+def calculate_price(price:float, quantity=1, discount=0) -> float:
+    """Calculate total price with disccount over total value"""
+    percent = price * (discount / 100)
+    return price * quantity - percent
+
+
+print(calculate_price(300))
+print(calculate_price(300, 1, 10))
+print(calculate_price(300, 2, 10))
+
 
