@@ -159,6 +159,170 @@
 # words = ["Hello", "world", "Python"]
 # show_words(*words)
 
+# D
+# 1
+# def show_profile(**info):
+#     for key, value in info.items():
+#         print(f"Key: {key}, value: {value}")
+
+# show_profile(name="Alessandro", age=18, city="Marstrand")
+
+# 2
+# def create_user_name(username, **details):
+#     user_details = {"username":username}
+#     for key, value in details.items():
+#         user_details[key] = value
+#     return user_details
+
+# user = create_user_name("Alessandro", age=18, city="Marstrand", status=True)
+# print(user)
+
+# 3
+# def build_product(name, price, **metadata):
+#     product = {"name":name, "price":price}
+
+#     for key, value in metadata.items():
+#         product[key] = value
+#     return product
+
+# product = build_product("computer", 20.000, model="Apple", year="2026", color="gray")
+# print(product)
+
+# 4
+# def accept_only_valid_values(**settings):
+#     valid_parameters = {}
+#     for key, value in settings.items():
+#         if value is not None:
+#             valid_parameters[key] = value
+
+#     return valid_parameters
+
+# user = accept_only_valid_values(
+#     username="Alessandro",
+#     age=18,
+#     city=None,
+#     country="Sweden"
+# )
+
+# print(user)
+
+# 5
+# def create_profile(username, age, city):
+#     print(f"Username: {username}")
+#     print(f"Age: {age}")
+#     print(f"City: {city}")
+
+
+# user_details = {
+#     "username": "Alessandro",
+#     "age": 18,
+#     "city": "Marstrand"
+# }
+
+# create_profile(**user_details)
+
+# E
+# 1
+# def log_event(event_type, *messages, **metadata):
+#     event = {"event_type":event_type}
+
+#     for message in messages:
+#         event[message[0]] = message[1]
+
+#     for key, value in metadata.items():
+#         event[key] = value
+
+#     return event
+
+# event = log_event("Concert",
+#                   ("guests", "300"),
+#                   ("full_lengh", "4x"), 
+#                   ("is_sold_out", True), 
+#                   band="Motley Crue", 
+#                   tour="Shout at the devil", 
+#                   year=1984)
+
+# print(event)
+
+# 2
+# def calculate_order(customer, *prices, **options):
+#     total = sum(prices)
+#     discount = options.get("discount", 0)
+#     shipping = options.get("shipping", 0)
+#     total = total - discount + shipping
+#     print(f"Customer: {customer}")
+#     print(f"Total: {total}")
+
+# calculate_order(
+#     "Alessandro",
+#     20,
+#     30,
+#     50,
+#     discount=10,
+#     shipping=5
+# )
+
+# 3
+# def create_account(**kwargs):
+#     username = kwargs.get("username")
+#     email = kwargs.get("email")
+#     age = kwargs.get("age")
+
+#     print(f"Username: {username}")
+#     print(f"Email: {email}")
+#     print(f"Age: {age}")
+
+
+# create_account(
+#     username="Alessandro",
+#     email="alessandro@example.com",
+#     age=18
+# )
+
+# def create_account(username, email, age):
+
+#     print(f"Username: {username}")
+#     print(f"Email: {email}")
+#     print(f"Age: {age}")
+
+
+# create_account(
+#     "Alessandro",
+#     "alessandro@example.com",
+#     18
+# )
+
+# The explicit version is more readable because we can immediately
+# see which information the function requires.
+# **kwargs is more flexible because we can accept different
+# keyword arguments, but it is less clear what the function expects.
+# For a function with a fixed set of required parameters,
+# explicit parameters are usually the better choice.
+
+# 4
+# def calculate_total(*prices):
+#     total = sum(prices)
+#     print(f"Total: {total}")
+
+# calculate_total(10, 20)
+# calculate_total(10, 20, 30, 40)
+# calculate_total(5, 15, 25, 35, 45, 55)
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
 
 
 
