@@ -106,3 +106,60 @@
 
 # student_name, number_of_scores, average = describe_scores("Alessandro", 1, 2, 3, 4, 5)
 # print(f"{student_name}: {number_of_scores} scores and average:{average}")
+
+# C
+# 1
+# def unpack_list(a, b, c):
+#     return(a, b, c)
+
+# list_numbers = [1, 2, 3]
+# numbers_unpacked = unpack_list(*list_numbers)
+# print(numbers_unpacked)
+
+# 2
+# def show_info(first_name, last_name, city):
+#     print(f"Name: {first_name} {last_name}")
+#     print(f"City: {city}")
+
+# info = ("John", "Smith", "Stockholm")
+# show_info(*info)
+
+# 3
+# values = [1, 2, 3, 4, 5]
+# first, *middle, last = values
+
+# print("First:", first)
+# print("Middle:", middle)
+# print("Last:", last)
+
+# values = [10, 20, 30]
+# first, *middle, last = values
+
+# print("First:", first)
+# print("Middle:", middle)
+# print("Last:", last)
+
+# values = ["A", "B", "C", "D", "E", "F", "G"]
+# first, *middle, last = values
+
+# print("First:", first)
+# print("Middle:", middle)
+# print("Last:", last)
+
+# 4
+# * in a function definition collects multiple arguments
+# into a tuple.
+# def show_words(*words):
+#     print(words)
+
+# show_words("Hello", "world", "Python")
+
+# # * in a function call unpacks a sequence.
+# # Each element is passed as a separate argument.
+# words = ["Hello", "world", "Python"]
+# show_words(*words)
+
+
+
+
+
