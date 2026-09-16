@@ -83,6 +83,95 @@
 
 # C
 # 1
+# playlist = ["A", "B", "C", "D", "E", "F"]
+# enumerated_playlist = { song:index for index, song in enumerate(playlist, start= 1) }
+# print(enumerated_playlist)
+
+# 2
+# tasks = ["Study Python", "Do homework", "Go shopping", "Clean the house"]
+# enumarated_tasks = { f"task{index}":task for index, task in enumerate(tasks, start=1) }
+# print(enumarated_tasks)
+
+# 3
+# threshold = 10
+# values = [20, 30, 10, 40]
+# indexes_above_threshold = [index for index, value in enumerate(values) if value > threshold ]
+# print(indexes_above_threshold)
+
+# 4
+# names = ["Alessandro", "Maria", "Alicia", "Matteo"]
+# for index in range(len(names)):
+#     print(index, names[index])
+
+# names = ["Alessandro", "Maria", "Alicia", "Matteo"]
+# for index, name in enumerate(names):
+#     print(index, name)
+# enumerate() is clearer because you directly get both the index and the value 
+
+
+# D
+# 1
+# names = ["Alessandro", "Maria", "Alicia", "Matteo"]
+# scores = [70, 90, 80, 80]
+# combine = {name:score for name, score in zip(names, scores)}
+# print(combine)
+
+# 2
+# names = ["Alessandro", "Maria", "Alicia", "Matteo"]
+# scores = [70, 90, 80, 80]
+# combine = dict(zip(names, scores))
+# print(combine)
+
+# 3
+# product_name = ["Apple", "Banana", "Potatoes"]
+# prices = ["20.00", "34.00", "70.00"]
+# stock = [True, True, False]
+
+# products = [
+#     {"name": name, "price": price, "stock": in_stock}
+#     for name, price, in_stock in zip(product_name, prices, stock)
+# ]
+
+# print(products)
+
+# 4
+# product_name = ["Apple", "Banana"]
+# prices = ["20.00", "34.00", "70.00"]
+# combine = dict(zip(product_name, prices))
+# print(combine)
+# Result - {'Apple': '20.00', 'Banana': '34.00'} 
+
+# 5
+# names = ["Alessandro", "Maria", "Alicia"]
+# scores = [70, 90, 80]
+
+# for name, score in zip(names, scores):
+#     print(name, score)
+
+# 6
+# a = 10
+# b = 20
+# a, b = b, a
+
+# print(a, b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
