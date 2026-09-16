@@ -308,10 +308,307 @@
 # calculate_total(10, 20, 30, 40)
 # calculate_total(5, 15, 25, 35, 45, 55)
 
+# F
+# 1
+# def create_report(title, *sections, **metadata):
+
+#     report = {
+#         "title": title,
+#         "sections": sections,
+#         "metadata": metadata
+#     }
+
+#     return report
 
 
+# report = create_report(
+#     "Python Report",
+#     "Introduction to Python",
+#     "Functions and dictionaries",
+#     "Conclusion",
+#     author="Alessandro",
+#     department="IT",
+#     version="1.0"
+# )
+
+# print(report)
+
+# 2
+# def create_report(title, *sections, **metadata):
+
+#     # A section can be either:
+#     # 1. A string containing simple text
+#     # 2. A dictionary containing more detailed information
+
+#     return {
+#         "title": title,
+#         "sections": sections,
+#         "metadata": metadata
+#     }
 
 
+# report = create_report(
+#     "Python Report",
+
+#     "This is the introduction.",
+
+#     {
+#         "heading": "Functions",
+#         "content": "Functions allow us to organize and reuse code."
+#     },
+
+#     "This is the conclusion.",
+
+#     author="Alessandro",
+#     department="IT"
+# )
+
+# print(report)
+
+# 3
+# def create_report(title, *sections, **metadata):
+
+#     return {
+#         "title": title,
+#         "sections": sections,
+#         "metadata": metadata
+#     }
+
+
+# report = create_report(
+#     "Python Report",
+
+#     "Introduction",
+#     "Functions",
+#     "Dictionaries",
+
+#     author="Alessandro",
+#     department="IT",
+#     version="1.0",
+#     confidential=False,
+#     date="2026-09-16"
+# )
+
+# print(report)
+
+# 4
+# def summarize_report(report):
+
+#     summary = f"Report: {report['title']}\n"
+
+#     summary += "\nSections:\n"
+
+#     for section in report["sections"]:
+#         summary += f"- {section}\n"
+
+#     summary += "\nMetadata:\n"
+
+#     for key, value in report["metadata"].items():
+#         summary += f"- {key}: {value}\n"
+
+#     return summary
+
+
+# report = {
+#     "title": "Python Report",
+#     "sections": (
+#         "Introduction to Python",
+#         "Functions and dictionaries",
+#         "Conclusion"
+#     ),
+#     "metadata": {
+#         "author": "Alessandro",
+#         "department": "IT",
+#         "version": "1.0"
+#     }
+# }
+
+# print(summarize_report(report))
+
+# 5
+# def count_words(*sections):
+
+#     total_words = 0
+
+#     for section in sections:
+
+#         if isinstance(section, str):
+#             total_words += len(section.split())
+
+#     return total_words
+
+
+# section1 = "Python is easy to learn."
+# section2 = "Functions help organize code."
+# section3 = "Dictionaries store key value pairs."
+# total = count_words(section1, section2, section3)
+
+# print(f"Total words: {total}")
+
+# 6
+# def create_report(title, *sections, **metadata):
+
+#     return {
+#         "title": title,
+#         "sections": sections,
+#         "metadata": metadata
+#     }
+
+
+# metadata1 = {
+#     "author": "Alessandro",
+#     "department": "IT",
+#     "version": "1.0",
+#     "confidential": False,
+#     "date": "2026-09-16"
+# }
+
+
+# metadata2 = {
+#     "author": "Maria",
+#     "department": "Marketing",
+#     "version": "2.0",
+#     "confidential": True,
+#     "date": "2026-09-16"
+# }
+
+
+# report1 = create_report(
+#     "Python Basics",
+#     "Introduction",
+#     "Variables",
+#     "Functions",
+#     **metadata1
+# )
+
+
+# report2 = create_report(
+#     "Marketing Report",
+#     "Introduction",
+#     "Campaign results",
+#     "Conclusion",
+#     **metadata2
+# )
+
+
+# print(report1)
+# print(report2)
+
+# G
+# 1
+# def merge_settings(defaults, **overrides):
+
+#     settings = defaults.copy()
+
+#     for key, value in overrides.items():
+#         settings[key] = value
+
+#     return settings
+
+
+# defaults = {
+#     "theme": "light",
+#     "language": "English",
+#     "notifications": True
+# }
+
+# new_settings = merge_settings(
+#     defaults,
+#     theme="dark",
+#     notifications=False
+# )
+
+# print("Original:", defaults)
+# print("New:", new_settings)
+
+# 2
+# def call_summary(function_name, *args, **kwargs):
+
+#     summary = f"Function: {function_name}\n"
+#     summary += f"Positional arguments: {args}\n"
+#     summary += f"Keyword arguments: {kwargs}\n"
+
+#     return summary
+
+
+# result = call_summary(
+#     "create_user",
+#     "Alessandro",
+#     18,
+#     city="Marstrand",
+#     country="Sweden"
+# )
+
+# print(result)
+
+# 3
+# Write a flexible statistics function that returns
+# count, total, average, min and max for *numbers.
+# Implement the calculations manually where reasonable.
+
+# def statistics(*numbers):
+#     if len(numbers) == 0:
+#         return {
+#             "count": 0,
+#             "total": 0,
+#             "average": 0,
+#             "min": None,
+#             "max": None
+#         }
+
+#     count = 0
+#     total = 0
+#     minimum = numbers[0]
+#     maximum = numbers[0]
+
+#     for number in numbers:
+#         count += 1
+#         total += number
+
+#         if number < minimum:
+#             minimum = number
+
+#         if number > maximum:
+#             maximum = number
+
+#     average = total / count
+
+#     return {
+#         "count": count,
+#         "total": total,
+#         "average": average,
+#         "min": minimum,
+#         "max": maximum
+#     }
+
+
+# # Test the function
+# result = statistics(10, 20, 30, 40, 50)
+
+# print(result)
+
+# 4
+# Create five "predict the output" scope questions
+# and verify your predictions.
+
+
+# Question 1
+# x = 10
+
+# def example1():
+#     x = 20
+#     print(x)
+
+# example1()
+# print(x)
+
+# Prediction:
+# 20
+# 10
+
+# Actual output:
+# 20
+# 10
 
 
 
