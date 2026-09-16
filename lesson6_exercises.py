@@ -155,6 +155,39 @@
 
 # print(a, b)
 
+# E
+# 1
+# words = ["Potatoes", "Orange", "Banana", "Cheese", "Milk", "Kiwi"]
+# ordered_words = sorted(words, key=lambda word: len(word))
+# print(ordered_words)
+
+# 2
+
+
+
+
+# F
+# 1
+# products = [
+#     {"name": "  Apple ", "category": "Fruit", "price": 20.00, "stock": True},
+#     {"name": "BANANA", "category": " fruit ", "price": 34.50, "stock": True},
+#     {"name": "  potatoes", "category": "VEGETABLE", "price": 70.00, "stock": False},
+#     {"name": "ToMaTo", "category": "Vegetable ", "price": 15.99, "stock": True},
+#     {"name": "  ORANGE  ", "category": " FRUIT", "price": 25.00, "stock": True},
+#     {"name": "milk", "category": "DAIRY", "price": 18.50, "stock": False},
+#     {"name": " CHEESE ", "category": " dairy ", "price": 45.00, "stock": True},
+#     {"name": "bread", "category": "Bakery", "price": 22.00, "stock": True},
+#     {"name": "  BUTTER", "category": " bakery ", "price": 32.75, "stock": False},
+#     {"name": "EGGS  ", "category": "DAIRY", "price": 29.90, "stock": True},
+#     {"name": "  Chicken", "category": "MEAT ", "price": 89.99, "stock": True},
+#     {"name": "BEEF  ", "category": " meat", "price": 129.50, "stock": False}
+# ]
+
+# 2
+# products = [{}]
+
+
+
 
 
 
