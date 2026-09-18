@@ -157,14 +157,64 @@
 
 # E
 # 1
-# words = ["Potatoes", "Orange", "Banana", "Cheese", "Milk", "Kiwi"]
-# ordered_words = sorted(words, key=lambda word: len(word))
-# print(ordered_words)
+# words = ["apple", "cat", "banana", "dog", "elephant"]
+# sorted_words = sorted(words, key=lambda word: len(word))
+# print(sorted_words)
 
 # 2
+# students = [
+#     {"name": "Anna", "score": 85},
+#     {"name": "David", "score": 92},
+#     {"name": "Sara", "score": 78},
+#     {"name": "Leo", "score": 95}
+# ]
+
+# ascending = sorted(students, key=lambda student: student["score"])
+# descending = sorted(students, key=lambda student: student["score"], reverse=True)
+
+# print(ascending)
+# print(descending)
+
+# 3
+# products = [
+#     {"name": "Laptop", "price": 1200},
+#     {"name": "Mouse", "price": 25},
+#     {"name": "Keyboard", "price": 80},
+#     {"name": "Monitor", "price": 300}
+# ]
+
+# sorted_products = sorted(products, key=lambda product: product["price"])
+# print(sorted_products)
+
+# 4
+# people = [
+#     {"first_name": "John", "last_name": "Smith"},
+#     {"first_name": "Anna", "last_name": "Brown"},
+#     {"first_name": "David", "last_name": "Wilson"},
+#     {"first_name": "Sara", "last_name": "Anderson"}
+# ]
+
+# sorted_people = sorted(people, key=lambda person: person["last_name"])
+# print(sorted_people)
+
+# 5
+# students = [
+#     {"name": "Anna", "score": 85},
+#     {"name": "David", "score": 92},
+#     {"name": "Sara", "score": 78}
+# ]
 
 
+# def get_score(student):
+#     return student["score"]
 
+# sorted_students = sorted(students, key=get_score)
+# print(sorted_students)
+
+# Using Lambda
+
+# sorted_students = sorted( students, key=lambda student: student["score"])
+# print(sorted_students)
 
 # F
 # 1
@@ -184,33 +234,181 @@
 # ]
 
 # 2
-# products = [{}]
+# cleaned_products = [
+#     {
+#         **product,
+#         "name": product["name"].strip().title(),
+#         "category": product["category"].strip().title()
+#     }
+#     for product in products
+# ]
 
+# print(cleaned_products)
 
+# 3
+# in_stock_products = [
+#     product
+#     for product in cleaned_products
+#     if product["stock"] > 0
+# ]
 
+# print(in_stock_products)
 
+# 4
+# categories = {
+#     product["category"]
+#     for product in cleaned_products
+# }
 
+# print(categories)
 
+# 5
+# inventory_values = {
+#     product["name"]: product["price"] * product["stock"]
+#     for product in cleaned_products
+# }
 
+# print(inventory_values)
 
+# 6
+# sorted_inventory = sorted(
+#     inventory_values.items(),
+#     key=lambda item: item[1],
+#     reverse=True
+# )
 
+# print(sorted_inventory)
 
+# 7
+# for rank, (name, value) in enumerate(sorted_inventory, start=1):
+#     print(f"{rank}. {name} - ${value}")
 
+# 8
+# product_names = [product["name"] for product in cleaned_products]
+# stock_values = [product["stock"] for product in cleaned_products]
 
+# for name, stock in zip(product_names, stock_values):
+#     print(f"{name}: {stock} units")
 
+# 9
+# over_complicated = [
+#     product["name"]
+#     for product in cleaned_products
+#     if product["stock"] > 0
+#     if product["price"] * product["stock"] > 500
+#     if product["category"] in {"Electronics", "Audio", "Mobile", "Cameras"}
+# ]
 
+# valuable_products = []
 
+# # It is easier to read, understand, debug, and maintain.
+# for product in cleaned_products:
+#     if product["stock"] > 0 and product["price"] * product["stock"] > 500:
+#         valuable_products.append(product["name"])
 
+# G
+# 1
+# numbers = [[1, 2], [3, 4], [5, 6]]
+# flattened = [number for group in numbers for number in group]
+# print(flattened)
 
+# 2
+# table = [[i * j for j in range(1, 11)] for i in range(1, 11)]
+# print(table)
 
+# 3
+# names = ["Anna", "David", "Sara", "Leo"]
+# scores = [85, 55, 92, 78]
 
+# passing_students = [
+#     {"name": name, "score": score}
+#     for name, score in zip(names, scores)
+#     if score >= 60
+# ]
 
+# print(passing_students)
 
+# 4
+# scores = [78, 92, 55, 81, 67, 95, 73]
 
+# Using loops
+# has_failed = False
 
+# for score in scores:
+#     if score < 60:
+#         has_failed = True
+#         break
 
+# all_passed = True
 
+# for score in scores:
+#     if score < 60:
+#         all_passed = False
+#         break
 
+# print(has_failed)
+# print(all_passed)
 
+# Using any() and all():
+# has_failed = any(score < 60 for score in scores)
+# all_passed = all(score >= 60 for score in scores)
 
+# print(has_failed)
+# print(all_passed)
 
+# 5
+
+# a
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # Before
+# squares = []
+# for number in numbers:
+#     squares.append(number ** 2)
+
+# # Pythonic
+# squares = [number ** 2 for number in numbers]
+
+# b
+# names = ["Alessandro", "Maria", "Alicia", "Matteo", "Apple", "Schummi"]
+# # Before
+# for i in range(len(names)):
+#     print(i, names[i])
+
+# # Pythonic
+# for i, name in enumerate(names):
+#     print(i, name)
+
+# c
+# names = ["Alessandro", "Maria", "Alicia", "Matteo", "Apple", "Schummi"]
+# scores = [1, 2, 3, 4, 5, 6] 
+# # Before
+# for i in range(len(names)):
+#     print(names[i], scores[i])
+
+# # Pythonic
+# for name, score in zip(names, scores):
+#     print(name, score)
+
+# d
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # Before
+# squares = {}
+
+# for number in numbers:
+#     squares[number] = number ** 2
+
+# # Pythonic
+# squares = {number: number ** 2 for number in numbers}
+
+# e
+# scores = [1, 2, 3, 4, 5, 6]
+# # Before
+# found = False
+
+# for score in scores:
+#     if score >= 90:
+#         found = True
+#         break
+
+# # Pythonic
+# found = any(score >= 90 for score in scores)
