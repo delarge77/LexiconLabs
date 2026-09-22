@@ -174,20 +174,20 @@
 
 # D
 # 1
-# class Student():
+class Student():
 
-#     def __init__(self, name, score) -> None:
-#         self.name = name
-#         self.score = score
+    def __init__(self, name, score) -> None:
+        self.name = name
+        self.score = score
 
-#     def get_status(self):
-#         if self.score >= 70:
-#             return "PASS"
-#         return "FAIL"
+    def get_status(self):
+        if self.score >= 70:
+            return "PASS"
+        return "FAIL"
 
-# student1 = Student("Alessandro", 50)
-# student2 = Student("Maria", 90)
-# student3 = Student("Alicia", 100)
+student1 = Student("Alessandro", 50)
+student2 = Student("Maria", 90)
+student3 = Student("Alicia", 100)
 
 # students = [student1, student2, student3]
 
@@ -202,6 +202,33 @@
 
 # for student in students_approved:
 #     print(student.name, student.score)
+
+# E
+# 1
+# class Teacher():
+#     def __init__(self, name) -> None:
+#         self.name = name
+
+# class Course():
+#     def __init__(self, name, teacher) -> None:
+#         self.name = name
+#         self.teacher = teacher
+#         self.students = []
+
+#     def add_student(self, student):
+#         self.students.append(student)
+
+# teacher = Teacher("Alessandro")
+# course = Course("Python", teacher)
+
+# print(course.name, course.teacher.name)
+# course.add_student(student1)
+# course.add_student(student2)
+# course.add_student(student3)
+
+# for student in course.students:
+#     print(student.name)
+
 
 
 
