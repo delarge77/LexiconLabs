@@ -149,6 +149,32 @@
 # print(task1.completed)
 # print(task2.completed)
 
+# C
+# 1
+class Product():
+    tax_rate = 0.25
+
+    def __init__(self, name, price) -> None:
+        self.name = name
+        self.price = price
+
+    def price_with_tax(self):
+        return self.price * (1 + self.tax_rate)
+
+laptop = Product("laptop", 1000)
+book = Product("Book", 350)
+tv = Product("Television", 800)
+
+print(laptop.price_with_tax())
+print(book.price_with_tax())
+print(tv.price_with_tax())
+
+book.tax_rate = 0.00
+print(book.price_with_tax())
+
+
+
+
 
 
 
