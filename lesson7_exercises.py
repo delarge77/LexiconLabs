@@ -174,20 +174,20 @@
 
 # D
 # 1
-class Student():
+# class Student():
 
-    def __init__(self, name, score) -> None:
-        self.name = name
-        self.score = score
+#     def __init__(self, name, score) -> None:
+#         self.name = name
+#         self.score = score
 
-    def get_status(self):
-        if self.score >= 70:
-            return "PASS"
-        return "FAIL"
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "PASS"
+#         return "FAIL"
 
-student1 = Student("Alessandro", 50)
-student2 = Student("Maria", 90)
-student3 = Student("Alicia", 100)
+# student1 = Student("Alessandro", 50)
+# student2 = Student("Maria", 90)
+# student3 = Student("Alicia", 100)
 
 # students = [student1, student2, student3]
 
@@ -229,6 +229,60 @@ student3 = Student("Alicia", 100)
 # for student in course.students:
 #     print(student.name)
 
+# F
+class Student():
+    def __init__(self, name, score) -> None:
+        self.name = name
+        self.score = score
+
+    def get_status(self):
+        if self.score >= 70:
+            return "PASS"
+        return "FAIL"
+
+class Teacher():
+    def __init__(self, name) -> None:
+        self.name = name
+
+class Course():
+    def __init__(self, name, teacher: Teacher) -> None:
+        self.name = name
+        self.teacher = teacher
+        self.students = []
+
+    def add_student(self, student: Student):
+        self.students.append(student)
+
+    def total_students(self):
+        return len(self.students)
+
+    def approved_students(self):
+        return [
+            student 
+            for student in self.students 
+            if student.get_status() == "PASS"
+        ]
+
+teacher = Teacher("Alessandro")
+course = Course("Python", teacher)
+student1 = Student("Alessandro", 50)
+student2 = Student("Maria", 90)
+student3 = Student("Alicia", 100)
+student4 = Student("Matteo", 90)
+student5 = Student("Schummi", 90)
+student6 = Student("Apple", 100)
+course.add_student(student1)
+course.add_student(student2)
+course.add_student(student3)
+course.add_student(student4)
+course.add_student(student5)
+course.add_student(student6)
+
+print(course.total_students())
+print(course.students[0].get_status())
+for student in course.approved_students():
+    print(student.name, student.score)
+    
 
 
 
