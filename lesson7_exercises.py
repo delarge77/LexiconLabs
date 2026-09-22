@@ -151,26 +151,57 @@
 
 # C
 # 1
-class Product():
-    tax_rate = 0.25
+# class Product():
+#     tax_rate = 0.25
 
-    def __init__(self, name, price) -> None:
-        self.name = name
-        self.price = price
+#     def __init__(self, name, price) -> None:
+#         self.name = name
+#         self.price = price
 
-    def price_with_tax(self):
-        return self.price * (1 + self.tax_rate)
+#     def price_with_tax(self):
+#         return self.price * (1 + self.tax_rate)
 
-laptop = Product("laptop", 1000)
-book = Product("Book", 350)
-tv = Product("Television", 800)
+# laptop = Product("laptop", 1000)
+# book = Product("Book", 350)
+# tv = Product("Television", 800)
 
-print(laptop.price_with_tax())
-print(book.price_with_tax())
-print(tv.price_with_tax())
+# print(laptop.price_with_tax())
+# print(book.price_with_tax())
+# print(tv.price_with_tax())
 
-book.tax_rate = 0.00
-print(book.price_with_tax())
+# book.tax_rate = 0.00
+# print(book.price_with_tax())
+
+# D
+# 1
+# class Student():
+
+#     def __init__(self, name, score) -> None:
+#         self.name = name
+#         self.score = score
+
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "PASS"
+#         return "FAIL"
+
+# student1 = Student("Alessandro", 50)
+# student2 = Student("Maria", 90)
+# student3 = Student("Alicia", 100)
+
+# students = [student1, student2, student3]
+
+# for student in students:
+#     print(student.name, student.score, student.get_status())
+
+# students_approved = [
+#     student 
+#     for student in students 
+#     if student.score >= 70
+# ]
+
+# for student in students_approved:
+#     print(student.name, student.score)
 
 
 
