@@ -152,4 +152,43 @@
 # print(salesReport.get_summary())
 
 # H
+# class User:
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email
 
+#     def greetings(self):
+#         return f"Hello {self.username}. Your email is {self.email}"
+
+# class AdminUser(User):
+#     def __init__(self, username, email, is_admin = True):
+#         super().__init__(username, email)
+#         self.is_admin = is_admin
+
+#     def admin_access(self):
+#         return "You have admin access"
+
+#     def greetings(self):
+#         base_greeting = super().greetings()
+#         return f"{base_greeting}, and you are Admin: {self.is_admin}"
+
+# class PremiumUser(User):
+#     def __init__(self, username, email, is_premium = True):
+#         super().__init__(username, email)
+#         self.is_premium = is_premium
+
+#     def premium_user(self):
+#         return "You are a premium user"
+
+#     def greetings(self):
+#         base_greeting = super().greetings()
+#         return f"{base_greeting}, and you are Premium: {self.is_premium}"
+
+# admin_user = AdminUser("Alessandro", "alessandro@python.com")
+# premium_user = PremiumUser("Maria", "maria@ai.com")
+
+# print(admin_user.admin_access())
+# print(admin_user.greetings())
+
+# print(premium_user.premium_user())
+# print(premium_user.greetings())
