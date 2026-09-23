@@ -263,24 +263,28 @@
 #             if student.get_status() == "PASS"
 #         ]
 
-# teacher = Teacher("Alessandro")
-# course = Course("Python", teacher)
+# teacher1 = Teacher("Alessandro")
+# course1 = Course("Python", teacher1)
+# teacher2 = Teacher("Maria")
+# course2 = Course("AI", teacher2)
 # student1 = Student("Alessandro", 50)
 # student2 = Student("Maria", 90)
 # student3 = Student("Alicia", 100)
 # student4 = Student("Matteo", 90)
 # student5 = Student("Schummi", 90)
 # student6 = Student("Apple", 100)
-# course.add_student(student1)
-# course.add_student(student2)
-# course.add_student(student3)
-# course.add_student(student4)
-# course.add_student(student5)
-# course.add_student(student6)
+# course1.add_student(student1)
+# course1.add_student(student2)
+# course1.add_student(student3)
+# course2.add_student(student4)
+# course2.add_student(student5)
+# course2.add_student(student6)
 
-# print(course.total_students())
-# print(course.students[0].get_status())
-# for student in course.approved_students():
+# print(course1.total_students())
+# print(course1.students[0].get_status())
+# for student in course1.students:
+#     print(student.name, student.score)
+# for student in course2.students:
 #     print(student.name, student.score)
     
 
