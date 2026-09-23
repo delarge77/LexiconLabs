@@ -100,8 +100,6 @@
 #         if self.year < 1990:
 #             self.is_active = False
 
-    
-
 # class Laptop(Device):
 #     def __init__(self, brand, year, ram_gb):
 #         super().__init__(brand, year)
@@ -118,4 +116,28 @@
 
 # print(laptop.brand, laptop.year, laptop.ram_gb, laptop.is_active)
 # print(mobile.brand, mobile.year, mobile.model, mobile.is_active)
+
+# F
+# class Notification:
+#     def send(self)-> str:
+#         return "Attention: "
+    
+# class EmailNotification(Notification):
+#     def send(self):
+#         base_message = super().send() 
+#         return (base_message + "This is an email notification")
+
+
+# class SMSNotification(Notification):
+#     def send(self):
+#             base_message = super().send() 
+#             return (base_message + "This is an SMS notification")
+    
+# email = EmailNotification()
+# print(email.send())
+# sms = SMSNotification()
+# print(sms.send())
+
+# G
+
 
