@@ -139,5 +139,17 @@
 # print(sms.send())
 
 # G
+# class Report:
+#     def get_summary(self)->str:
+#         return "Summary"
+    
+# class SalesReport(Report):
+#     def get_summary(self):
+#         base_summary = super().get_summary()
+#         return (base_summary + " for Sales Report")
 
+# salesReport = SalesReport()
+# print(salesReport.get_summary())
+
+# H
 
