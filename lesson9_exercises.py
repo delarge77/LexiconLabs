@@ -89,3 +89,27 @@
 
 # str_obj = str(product1)
 # print(type(str_obj))
+
+# F
+# class Account:
+#     def __init__(self, owner, balance) -> None:
+#         self.owner = owner
+#         self.balance = balance
+
+#     def __str__(self):
+#         return f"Owner : {self.owner} and balance: {self.balance}"
+
+# class SavingAccount(Account):
+#     def __init__(self, owner, balance, interest_rate) -> None:
+#         super().__init__(owner, balance)
+#         self.interest_rate = interest_rate
+
+#     def __str__(self):
+#         base_str = super().__str__()
+#         return (base_str + f"Interest rate: {self.interest_rate}")
+
+# account = Account("Alessandro", 6000000)
+# saving = SavingAccount("Alessandro", 6000000, 0.25)
+
+# print(account)
+# print(saving)
