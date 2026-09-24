@@ -131,3 +131,57 @@
 # print(computer.cpu.model)
 
 # Car has a Engine, Manager is a employee, Course has a teacher, Phone is a device
+
+# H
+# class Export:
+#     def export(self, data)->str:
+#         self.data = data
+#         return "Base data"
+
+# class Console(Export):
+#     def export(self, data):
+#         return "Console data"
+
+#     def __str__(self):
+#         return f"Return Console data {self.data}"
+
+# class Text(Export):
+#     def export(self, data):
+#         return "Text data"
+
+#     def __str__(self):
+#             return f"Return Text data {self.data}"
+
+# class Summary(Export):
+#     def export(self, data):
+#         return "Summary data"
+
+#     def __str__(self):
+#         return f"Return Summary data {self.data} "
+
+# console = Console()
+# text = Text()
+# summary = Summary()
+
+# exports =[console, text, summary]
+
+# def exposure_data(exports):
+#     for export in exports:
+#         class_type = str(type(export))
+#         print(export.export({class_type:f"data{class_type}"}))
+
+# exposure_data(exports)
+
+# class Example:
+#      def export(self, data):
+#         self.data = data
+#         return "Example data"
+     
+#      def __str__(self):
+#         return f"Return Example data {self.data} "
+
+# exports.append(Example())
+# exposure_data(exports)
+
+
+
