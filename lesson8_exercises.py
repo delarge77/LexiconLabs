@@ -1,5 +1,4 @@
 # A
-
 # class BadTeam:
 #     def __init__(self, name, members = []) -> None:
 #         self.name = name
