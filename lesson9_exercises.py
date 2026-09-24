@@ -47,19 +47,45 @@
 #      print(file.describe())
 
 # C
-class Printer:
-    def display_status(self):
-        return "Printer"
+# class Printer:
+#     def display_status(self):
+#         return "Printer"
 
-class Screen:
-    def display_status(self):
-            return "Screen"
+# class Screen:
+#     def display_status(self):
+#             return "Screen"
 
-objs = [Printer(), Screen()]
-for objc in objs:
-     print(objc.display_status())
+# objs = [Printer(), Screen()]
+# for objc in objs:
+#      print(objc.display_status())
 
 # It works because both have the same method name
 
 # D
+# class User:
+#     pass
 
+# class AdminUser(User):
+#     pass
+
+# admin_user = AdminUser()
+# print(isinstance(admin_user, AdminUser))
+# print(isinstance(admin_user, User))
+# print(isinstance(admin_user, str))
+
+# E
+# class Product:
+#     def __init__(self, name, price) -> None:
+#         self.name = name
+#         self.price = price
+
+#     def __str__(self) -> str:
+#         return f"Product name {self.name} and price: {self.price}"
+
+# product1 = Product("Laptop", 2000)
+# product2 = Product("Apple", 0.50)
+# product3 = Product("vinyl", 180)
+# print(product1, product2, product3)
+
+# str_obj = str(product1)
+# print(type(str_obj))
