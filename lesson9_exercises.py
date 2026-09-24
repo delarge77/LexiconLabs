@@ -46,4 +46,20 @@
 #      print(file.title)
 #      print(file.describe())
 
+# C
+class Printer:
+    def display_status(self):
+        return "Printer"
+
+class Screen:
+    def display_status(self):
+            return "Screen"
+
+objs = [Printer(), Screen()]
+for objc in objs:
+     print(objc.display_status())
+
+# It works because both have the same method name
+
+# D
 
