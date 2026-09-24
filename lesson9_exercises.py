@@ -113,3 +113,21 @@
 
 # print(account)
 # print(saving)
+
+# G
+# class CPU:
+#     def __init__(self, model) -> None:
+#         self.model = model
+
+# class Computer:
+#     def __init__(self, brand, cpu: CPU) -> None:
+#         self.brand = brand
+#         self.cpu = cpu
+
+# cpu = CPU("machintosh")
+# computer = Computer("Apple", cpu)
+
+# print(computer.brand)
+# print(computer.cpu.model)
+
+# Car has a Engine, Manager is a employee, Course has a teacher, Phone is a device
