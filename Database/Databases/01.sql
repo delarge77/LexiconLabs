@@ -40,3 +40,10 @@ SELECT name, LENGTH(name) AS name_length FROM products ORDER BY LENGTH(name) DES
 SELECT email, substr(email, 1, instr(email, '@') - 1) AS username FROM customers;
 
 -- Level 3
+SELECT * FROM products WHERE price > ( SELECT AVG(price) FROM products);
+SELECT name || ' costs ' || CAST(price AS INTEGER) || ' kr' AS price_list FROM products WHERE stock > 0 ORDER BY price ASC;
+SELECT city, COUNT(*) AS customer_count FROM customers GROUP BY city ORDER BY customer_count DESC;
+
+
+
+
