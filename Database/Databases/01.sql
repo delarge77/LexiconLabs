@@ -37,6 +37,6 @@ FROM products ORDER By price_level;
 SELECT first_name, COALESCE(city, "unknown") as city FROM customers;
 SELECT * FROM customers WHERE strftime('%m', joined_date) <= '06';
 SELECT name, LENGTH(name) AS name_length FROM products ORDER BY LENGTH(name) DESC LIMIT 1;
-SELECT email,
-       substr(email, 1, instr(email, '@') - 1) AS username
-FROM customers;
+SELECT email, substr(email, 1, instr(email, '@') - 1) AS username FROM customers;
+
+-- Level 3
