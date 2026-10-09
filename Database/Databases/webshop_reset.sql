@@ -157,6 +157,108 @@ SELECT customers.first_name , orders.order_id
 FROM customers
 LEFT JOIN orders ON orders.customer_id = customers.customer_id;
 
+SELECT  products.product_id, products.name
+FROM products
+LEFT JOIN order_items ON order_items.product_id = products.product_id
+WHERE order_items.product_id IS NULL;
+
+SELECT customers.first_name,  products.name, order_items.quantity
+FROM customers 
+JOIN orders ON orders.customer_id = customers.customer_id
+JOIN order_items ON order_items.order_id = orders.order_id
+JOIN products ON products.product_id = order_items.product_id
+WHERE customers.city = 'Uppsala';
+
+SELECT * 
+FROM products 
+WHERE category IN ('Clothing' , 'Accessories') 
+AND price BETWEEN 150 AND 500;
+
+SELECT *
+FROM orders
+WHERE  strftime('%Y-%m', order_date) = '2026-02'
+AND status <>   'cancelled';
+
+SELECT orders.order_id, products.name, order_items.quantity, order_items.quantity * products.price AS total_value
+FROM orders
+JOIN order_items ON order_items.order_id = orders.order_id 
+JOIN products ON products.product_id = order_items.product_id
+WHERE  total_value > 500  ORDER BY total_value DESC;
+
+SELECT DISTINCT customers.customer_id ,customers.first_name, customers.city
+FROM customers
+JOIN orders ON orders.customer_id = customers.customer_id 
+WHERE customers.city IN ('Stockholm', 'Uppsala');
+
+-- Revert eercises
+
+SELECT count (*) FROM orders
+
+SELECT * FROM orders;
+SELECT * FROM customers
+SELECT * FROM products
+SELECT * FROM order_items
+INSERT INTO customers VALUES (11, 'Leo', 'Falk', 'leo@falk.com', 'Uppsala', '2026-02-09' );
+UPDATE  customers SET joined_date = '2026-10-09' WHERE customer_id = 11;
+INSERT INTO orders VALUES(16, 11, '2026-10-09', 'new')
+INSERT INTO order_items VALUES(16, 1, 1, 599.0);
+INSERT INTO order_items VALUES(16, 9 , 2, 129.0);
+SELECT customers.customer_id, customers.first_name, products.name, orders.status, products.price, order_items.quantity, order_items.quantity * order_items.unit_price AS total_value
+FROM customers
+JOIN  orders ON orders.customer_id = customers.customer_id
+JOIN order_items ON order_items.order_id = orders.order_id
+JOIN products ON products.product_id = order_items.product_id
+WHERE customers.customer_id = 11
+
+UPDATE  orders SET status = 'cancelled' WHERE order_id = 12;
+DELETE FROM order_items WHERE order_id = 12;
+UPDATE products set stock = 13 WHERE product_id = 4;
+UPDATE products set stock = 101 WHERE product_id = 9;
+
+
+ALTER TABLE products ADD COLUMN disccount_percent DEFAULT 0 CHECK ( disccount_percent BETWEEN 0 AND 90);
+UPDATE products set disccount_percent = 20 WHERE category = 'Shoes';
+SELECT *, price - (price * disccount_percent / 100) AS final_price FROM products;
+
+SELECT products.name , products.category, orders.order_date
+FROM products
+LEFT JOIN order_items ON order_items.product_id = products.product_id
+LEFT JOIN  orders ON orders.order_id = order_items.order_id ORDER BY products.name;
+
+SELECT DISTINCT customers.first_name
+FROM customers
+JOIN orders ON orders.customer_id = customers.customer_id
+JOIN order_items ON order_items.order_id = orders.order_id
+JOIN products ON products.product_id = order_items.product_id
+WHERE products.category = 'Shoes'; 
+
+SELECT c1.first_name as customer1, c2.first_name as customer2, c1.city
+FROM customers as c1
+JOIN customers as c2 ON c1.city = c2.city
+AND c1.customer_id < c2.customer_id
+ORDER BY c1.city, c1.first_name; 
+  
+ UPDATE products set price = 649 WHERE product_id = 1
+ 
+SELECT orders.order_id, products.name, order_items.unit_price, products.price
+FROM orders
+JOIN order_items ON order_items.order_id = orders.order_id 
+JOIN products ON products.product_id = order_items.product_id
+WHERE order_items.unit_price <> products.price;
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
