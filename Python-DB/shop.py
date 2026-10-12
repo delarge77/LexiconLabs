@@ -59,10 +59,16 @@ def show_order(conn):
     for name, quantity in cursor.fetchall():
         print(f"Product: {name:<20} quantity: {quantity}")
 
+# Top 3 best-selling products'. Use GROUP BY, ORDER BY and LIMIT
 def best_selling(conn):
-    
-    print("Best selling products")
- 
+    cursor = conn.execute("SELECT products.name, SUM(order_items.quantity) AS total_sold " \
+    "FROM products " \
+    "JOIN order_items ON order_items.product_id = products.product_id " \
+    "GROUP BY products.product_id "\
+    "ORDER BY total_sold DESC "\
+    "LIMIT  3;")
+    for name, total_sold in cursor.fetchall():
+        print(f"Product: {name:<20} total sold: {total_sold}")
  
 def main():
     conn = connect()
