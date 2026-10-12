@@ -246,6 +246,9 @@ JOIN order_items ON order_items.order_id = orders.order_id
 JOIN products ON products.product_id = order_items.product_id
 WHERE order_items.unit_price <> products.price;
 
+-- Revert eercises
+SELECT COUNT (*) FROM orders
+
  
 
 
