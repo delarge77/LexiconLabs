@@ -24,8 +24,8 @@ from pprint import pprint
 #print("deleted", result.deleted_count)
 #print(db.products.count_documents({}))
 
-#product = db.products.find_one({"name": "Beanie"})
-#print(product["name"], "costs", product["price"], "kr" )
+# product = db.products.find_one({"name": "Beanie"})
+# print(product["name"], "costs", product["price"], "kr" )
 
 #print(db.products.count_documents({}))
 #print(db.products.count_documents({"category": "Shoes"}))
