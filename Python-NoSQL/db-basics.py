@@ -58,4 +58,5 @@ db = client["webshop"]
 # for order in db.orders.find():
 #     print(f"Order {order['_id']}: {len(order['items'])} items")
 
-
+# for i in db.customers.find({"$or": [{"city": "Uppsala"}, {"newsletter": True}]}):
+#     pprint(i)
