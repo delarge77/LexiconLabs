@@ -29,8 +29,19 @@ db = client["webshop"]
 # for product in db.products.aggregate([{"$group":
 #                                        {"_id":"$category", 
 #                                         "cheapest": {"$min": "$price"}, 
-#                                         "most_expensive": {"$max": "$price"}}}]):
+#                                         "most_expensive": {"$max": "$price"}}}, 
+#                                         {"$project":{ "category": "$_id", "_id": 0, "cheapest": 1, "most_expensive": 1}}]):
 
 #     print(product)
+
+# 6
+for order in db.orders.aggregate([{"$group":{"_id":"$customer_id", "count":{"$sum":1}}}]):
+    #                             {"$group":{"_id":"$customer_id", "count": {"$sum": 1}}}
+    print(order)
+
+# 7
+for order in db.orders.aggregate([{"$group":{"_id":"$items.count", "count":{"$sum":1}}}]):
+    print(order)
+
     
 
