@@ -15,6 +15,11 @@ class Movie(BaseModel):
     director: str
     year: int
 
+class MovieUpdate(BaseModel):
+    title: str | None = None
+    director: str | None = None
+    year: int | None = None
+
 def find_movie(movie_id: int):
     for movie in movies:
         if movie['id'] == movie_id:
@@ -52,5 +57,11 @@ def update_movie(movie: Movie, movie_id: int):
     existing["director"] = movie.director
     existing["year"] = movie.year
     return existing
+
+@app.patch("/movies/{movie_id}")
+def update_movie_optionals(movie_id: int, new_movie: MovieUpdate):
+    movie = find_movie(movie_id)
+    movie.update(new_movie.model_dump(exclude_unset=True))
+    return movie
 
 
