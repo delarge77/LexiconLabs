@@ -48,8 +48,8 @@ def delete_movie(movie_id: int):
 @app.put("/movies/{movie_id}")
 def update_movie(movie: Movie, movie_id: int):
     existing = find_movie(movie_id)
-    existing["title"] = movie.title,
-    existing["director"] = movie.director, 
+    existing["title"] = movie.title
+    existing["director"] = movie.director
     existing["year"] = movie.year
     return existing
 
