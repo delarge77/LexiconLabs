@@ -10,7 +10,10 @@ def get_json(url, params=None, headers=None, timeout=5):
     except requests.exceptions.ConnectionError:
         print("Could not connect to the server")
     except requests.exceptions.HTTPError as error:
-        print(f"The server said no: {error.response.status_code}")
+        if error.response is not None:
+             print(f"The server said no: {error.response.status_code}")
+        else:
+            print("An HTTP error occurred.")
     except requests.exceptions.JSONDecodeError:
         print("The answer was not JSON")
     except requests.exceptions.RequestException as error:

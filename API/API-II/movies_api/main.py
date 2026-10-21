@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Header, Depends
 from pydantic import BaseModel
-import os
+import os, json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,12 +19,30 @@ def check_key(x_api_key: str | None = Header(default=None)):
             detail="Invalid or missing API key"
         )
 
-movies = [
+default_movies = [
     {"id": 1, "title": "The GodFather", "director": "Francis Ford Coppola", "year": 1972},
     {"id": 2, "title": "Neuromancer", "director": "William Gibson", "year": 1984},
     {"id": 3, "title": "The Hobbit", "director": "J.R.R. Tolkien", "year": 1937},
     {"id": 4, "title": "Foundation", "director": "Isaac Asimov", "year": 1951},
 ]
+
+def load_movies():
+    if os.path.exists("movies.json"):
+        try:
+            with open("movies.json", "r", encoding="utf-8") as fp:
+                data = json.load(fp)
+                if data:
+                    return data
+        except json.JSONDecodeError:
+            pass
+    return default_movies
+
+
+def save_movies():
+    with open("movies.json", "w", encoding="utf-8") as fp:
+        json.dump(movies, fp, ensure_ascii=False, indent=4)
+
+movies = load_movies()
 
 class Movie(BaseModel):
     title: str
@@ -59,12 +77,14 @@ def add_movie(movie: Movie):
     new_id = max((m["id"] for m in movies), default=0) + 1
     new_movie = {"id":new_id, "title":movie.title, "director":movie.director, "year": movie.year}
     movies.append(new_movie)
+    save_movies()
     return new_movie
 
 @app.delete("/movies/{movie_id}", status_code=204, dependencies=[Depends(check_key)])
 def delete_movie(movie_id: int):
     movie = find_movie(movie_id)
     movies.remove(movie)
+    save_movies()
 
 @app.put("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def update_movie(movie: Movie, movie_id: int):
@@ -72,11 +92,13 @@ def update_movie(movie: Movie, movie_id: int):
     existing["title"] = movie.title
     existing["director"] = movie.director
     existing["year"] = movie.year
+    save_movies()
     return existing
 
 @app.patch("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def update_movie_optionals(movie_id: int, new_movie: MovieUpdate):
     movie = find_movie(movie_id)
     movie.update(new_movie.model_dump(exclude_unset=True))
+    save_movies()
     return movie
 

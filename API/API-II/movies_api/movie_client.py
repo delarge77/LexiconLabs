@@ -13,11 +13,12 @@ headers = {"X-API-Key": API_KEY}
 
 BASE = "http://127.0.0.1:8000"
 
-# moviesURL = get_json(f"{BASE}/movies")
-# movie = {"title":"Mental Health", "director":"Quiet Riot", "year": 1986}
-# result = requests.post(f"{BASE}/movies/", json=movie, headers=headers)
+result = get_json(f"{BASE}/movies")
+# print(result)
+movie = {"title":"Mental Health", "director":"Quiet Riot", "year": 1986}
+result = requests.post(f"{BASE}/movies/", json=movie, headers=headers)
 
 
-result = requests.delete(f"{BASE}/movies/1", headers=headers)
-print(result.status_code)
+# result = requests.delete(f"{BASE}/movies/1", headers=headers)
+print(result)
 

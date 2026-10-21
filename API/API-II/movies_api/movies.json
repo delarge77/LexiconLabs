@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "The GodFather",
+        "director": "Francis Ford Coppola",
+        "year": 1972
+    },
+    {
+        "id": 2,
+        "title": "Neuromancer",
+        "director": "William Gibson",
+        "year": 1984
+    },
+    {
+        "id": 3,
+        "title": "The Hobbit",
+        "director": "J.R.R. Tolkien",
+        "year": 1937
+    },
+    {
+        "id": 4,
+        "title": "Foundation",
+        "director": "Isaac Asimov",
+        "year": 1951
+    },
+    {
+        "id": 5,
+        "title": "Halloween",
+        "director": "Isaac Asimov",
+        "year": 1951
+    },
+    {
+        "id": 6,
+        "title": "Mental Health",
+        "director": "Quiet Riot",
+        "year": 1986
+    }
+]
