@@ -1,20 +1,27 @@
 from api_client import get_json
 
-# 1. City name -> coordinates
+def find_city(city: str):
+    while True:
+        city_results = get_json("https://geocoding-api.open-meteo.com/v1/search", params={"name": city, "count": 1})
+        
+        results = (city_results.get("results") 
+                   if isinstance(city_results, dict)
+                   else None
+                   )
+
+        if results:
+            return (
+                results[0]["latitude"],
+                results[0]["longitude"]
+            )
+
+        city = input("City not found. Please try again: ").strip()
+
+def get_weather(lat, lon):
+    return get_json("https://api.open-meteo.com/v1/forecast", params={"latitude":lat, "longitude":lon,
+                                                                     "current":["temperature_2m", "wind_speed_10m"]}) 
+
 city = input("Input city: ")
-
-result = get_json("https://geocoding-api.open-meteo.com/v1/search", params={"name":city, "count":"1"})
-print(result)
-for city in result["results"]:
-    print(city["latitude"], city["longitude"])
-    print(city)
-
-# result = get_json("https://api.open-meteo.com/v1/forecast", params={"-23.5475", "-46.63611", "current"="temperature_2m","wind_speed_10m"})
-# print(result)
-
-books = [
-    {"id": 1, "title": "Dune", "author": "Frank Herbert", "year": 1965},
-    {"id": 2, "title": "Neuromancer", "author": "William Gibson", "year": 1984},
-    {"id": 3, "title": "The Hobbit", "author": "J.R.R. Tolkien", "year": 1937},
-    {"id": 4, "title": "Foundation", "author": "Isaac Asimov", "year": 1951},
-]
+lat, lon = find_city(city)
+response = get_weather(lat, lon)
+print(f"Temperature: {response['current']['temperature_2m']}{response['current_units']['temperature_2m']}")
