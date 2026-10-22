@@ -3,7 +3,7 @@ from api_client import get_json
 def find_city(city: str):
     while True:
         city_results = get_json("https://geocoding-api.open-meteo.com/v1/search", params={"name": city, "count": 1})
-        
+
         results = (city_results.get("results") 
                    if isinstance(city_results, dict)
                    else None

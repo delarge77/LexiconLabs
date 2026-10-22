@@ -1,0 +1,63 @@
+Product Goal :
+
+1 - Develop a user-friendly app that allows FitLife members to view class schedules, book classes, and cancel bookings easily.
+
+Product Backlog : 
+
+1. View class schedule: As a gym member, I want to view the class schedule so that I can find classes that fit my availability.
+2. View class details: As a gym member, I want to see each class’s time, instructor, duration, and location so that I can choose the right class.
+3. Book a class: As a gym member, I want to book a class so that I can reserve my spot.
+4. See available spaces: As a gym member, I want to see how many spots are available so that I can decide whether to book a class.
+5. Cancel a booking: As a gym member, I want to cancel my booking so that another member can take my place.
+6. View my bookings: As a gym member, I want to see my upcoming bookings so that I can keep track of the classes I have reserved.
+7. Receive booking confirmation: As a gym member, I want to receive confirmation after booking a class so that I know my reservation was successful.
+8. Prevent overbooking: As a gym member, I want the app to prevent bookings when a class is full so that class capacity is respected.
+9. Receive cancellation confirmation: As a gym member, I want to receive confirmation when I cancel a booking so that I know my spot has been released.
+10. View instructor information: As a gym member, I want to see information about class instructors so that I can learn more about who will lead the session.
+11. Filter classes: As a gym member, I want to filter classes by type, date, or instructor so that I can find suitable classes more quickly.
+12. Receive schedule updates: As a gym member, I want to be notified when a booked class changes time or is cancelled so that I can adjust my plans.
+
+Refinement: 
+
+Criteria :
+
+1. Acceptance Criteria for the Top Five User Stories
+User Story 1: View Class Schedule
+As a gym member, I want to view the class schedule so that I can find classes that fit my availability.
+- The app displays upcoming classes with their dates and times.
+- Members can see the class name and instructor for each scheduled class.
+- The schedule shows whether a class is available or fully booked.
+User Story 2: View Class Details
+As a gym member, I want to see each class’s time, instructor, duration, and location so that I can choose the right class.
+- Each class displays its name, date, start time, and duration.
+- The instructor's name and class location are visible.
+- Members can see the number of available spaces before booking.
+User Story 3: Book a Class
+As a gym member, I want to book a class so that I can reserve my spot.
+- Members can book a class that has available spaces.
+- The app confirms the booking and displays it in the member's upcoming bookings.
+- Members cannot book a class that is already full.
+User Story 4: See Available Spaces
+As a gym member, I want to see how many spots are available so that I can decide whether to book a class.
+- The app displays the number of available spaces for each class.
+- The availability updates when a member books or cancels a class.
+- When no spaces remain, the class is marked as fully booked.
+User Story 5: Cancel a Booking
+As a gym member, I want to cancel my booking so that another member can take my place.
+- Members can cancel a class they have booked.
+- The app confirms the cancellation and removes the class from their upcoming bookings.
+- The cancelled spot becomes available for another member.
+
+Definition of done : 
+
+Choose one of these :
+Tested: The functionality has been tested, and all tests pass.
+Peer-reviewed: The work has been reviewed by another team member, where applicable.
+No critical defects: No known critical bugs remain.
+Integrated: The work is integrated into the main product without breaking existing functionality.
+Documentation updated: Relevant user or technical documentation is updated when necessary.
+Product Owner approval: The Product Owner confirms that the story meets the agreed acceptance criteria.
+In production: Running in already been using in production  
+
+Team agreement: A story is not considered Done just because the work has started or the main functionality 
+works. It must meet the agreed quality standards and be ready for use.
